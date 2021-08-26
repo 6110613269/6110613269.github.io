@@ -3,7 +3,7 @@
 ### Computer Engineer
     
 
-![My picture](me.jpg | width=200)
+![My picture](me200.jpg)
 
 ## Contact
 - Address: Bangkok
@@ -14,10 +14,10 @@
 
 
 ## About me
-### gender : male
-### date of birth: 06/03/2000
-### age : 21
-### nationlity : Thai
+- gender : male
+- date of birth: 06/03/2000
+- age : 21
+- nationlity : Thai
 
 
 ## Professional Education
