@@ -3,7 +3,7 @@
 ### Computer Engineer
     
 
-![My picture](me.jpg){ width: 200px; }
+![My picture](me.jpg | width=200)
 
 ## Contact
 - Address: Bangkok
@@ -21,7 +21,7 @@
 
 
 ## Professional Education
-### 2006-2011 Assumption College
-### 2012-2017 Bodindecha
-### 2018-now  Thammasat University
+- 2006-2011 Assumption College
+- 2012-2017 Bodindecha
+- 2018-now  Thammasat University
 
