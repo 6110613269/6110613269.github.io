@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>error</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background-color: #9C8BEE;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+            h1{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 2px;
+            }
+           
+
+
+        </style>
+    </head>
+    <body>
+        <div id="img">
+        
+        </div>
+        <h1 style="background-color: white" align="center" >Error !</h1>
+        <h2 align="center">This course cannot be registered.</h2>
+        <h2 align="center">Please try again.</h2>
+        
+        
+        <p style="text-align:center">
+            <a href="{% url 'student' student_id %}">back</a>
+        </p>
+        
+
+
+    </body>
+</html>

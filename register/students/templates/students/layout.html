@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registrar</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background-color: #FCBEA4;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+            .header{
+                font-size: 15px;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: bold;
+                letter-spacing: 4px;
+            }
+            .quotapage{
+                font-size: 15px;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: bold;
+                letter-spacing: 2px;
+                background-color:#FFFFFF;
+                padding-top: 1.5px;
+                padding-bottom: 1px;
+                padding-left: 20px
+            }
+            th{
+                background-color: #FA6E4F;
+            }
+            table{
+                border: 10px solid black;
+            }
+            table, td, tr:nth-child(even)  {
+                width:70%;
+                border-collapse: collapse;
+                background-color: #FFFFFF ;
+                padding:10px;
+                margin-right: 200px;
+                margin-left: 190px;
+            }
+            .quotaresult{
+                font-size: 20px;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: bold;
+                letter-spacing: 2px;
+                background-color:#FA6E4F;
+                padding-top: 1px;
+                padding-bottom: 1px;
+                margin-right: 190px;
+                margin-left: 190px;
+
+            }
+            .add{
+                position: absolute;
+                left: 38%;
+
+            }
+            .drop{
+                position: absolute;
+                left: 38%;
+
+            }
+            .back{
+                font-size: 15px;
+                font-weight: bold;
+                font-family: 'Roboto Condensed', sans-serif;
+                position: fixed;
+                left: 95%;
+                bottom: 95%;
+                background-color: white;
+                padding: 5px;
+
+            }
+            .back:hover {
+                font-style: italic!important;
+                color:#82812E!important;
+                background: #FAF29E!important;
+                -webkit-box-shadow: 1px 0 0 #f9f0ff;
+                border-radius: 3px;
+                left: 95%;
+                bottom: 95%;
+            }
+
+            input:hover {
+                background-color: #BF7B11;
+                border:none;
+            }
+            
+            .button {
+                background-color: #FF9C00;
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                padding: 14px 40px;
+            }
+        </style>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "students/layout.html" %}
+
+{% block body %}
+
+
+<h1>WELCOME</h1>
+    <h2 >
+       {{ students.first }} {{ students.last }}
+    </h2>
+    
+<div class="text">
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For register </h4>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</h1>
+</div>
+<div class="quota">
+        {% if students.id > 0 %}
+        <form action="{% url 'student' students.id %}"method="post">
+        {% csrf_token %}
+        <input type="submit" class="button" value="Register" >
+        </form>
+        {% else %}
+        <form action="{% url 'student' students_id %}"method="post" >
+        {% csrf_token %}
+        <input type="submit" class="button" value="Register" >
+        {% endif %}
+</div>
+<p><br></p>
+<div class="logout">
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+
+
+{% endblock %}

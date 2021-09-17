@@ -1,0 +1,73 @@
+{% extends "students/layout_stu.html" %}
+
+{% block body %}
+<div class="header">
+    
+    <h1>Register</h1>
+</div>
+<div class="quotapage">
+    <h2 >
+       {{ student.first }} {{ student.last }}
+    </h2>
+</div><br>
+    <table>
+        <tr><th colspan="4" style="background-color: #EAB159"><h3>Course List</h3></th></tr>
+        <tr>
+            <th rowspan="2">Name</th><th colspan="2" align = 'center'>Seat</th><th rowspan="2">Status</th>
+        </tr>
+        <tr><td align = 'center'>Capacity</td><td align = 'center' >Seat</td></tr>
+        {% for i in non_enrolls %}
+        <tr><td>{{i.code}}: {{ i.name }}</td><td align = 'center'>{{ i.limit }}</td><td align = 'center'>{{ i.quotas.all.count }}</td>
+            <td align = 'center'>
+                {% if i.status == 'close' %}
+                close
+                {% elif i.limit == i.quotas.all.count %}
+                full
+                {% else %}
+                avaliable
+                {% endif %}
+            </td>
+        </tr> {% endfor %}</table><br>
+<div class="add">
+    <form action="{% url 'book' student.id %}" method="post">
+        {% csrf_token %}
+        <select name="enroll">
+            {% for enroll in non_enrolls %}
+            <option value="{{ enroll.id }}">{{ enroll }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add Course">
+    </form>
+</div><br><br>
+<div class="quotaresult">
+    <h2>Registration result:</h2>
+</div><br>
+
+<div class="result">
+    <table>
+        {% for enroll in enrolls %}<tr>
+        <td>{{ enroll }}</td>
+        {% empty %}
+        <td>Not registered.</td></tr>
+        {% endfor %}
+    </table>
+</div><br><br>
+<div class="drop">
+    <form action="{% url 'drop' student.id %}" method="post">
+        {% csrf_token %}
+        <select name="enroll">
+            {% for enroll in enrolls %}
+            <option value="{{ enroll.id }}">{{ enroll }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Drop Course">
+    </form>
+</div>
+
+<p></p>
+<div class="back">
+    <a href="{% url 'back' student.id %}">back</a>
+</div>
+
+
+{% endblock %}
