@@ -57,9 +57,7 @@ class QuotaTestCase(TestCase):
         q.quotas.add(useradd)
         c = Client()
         response = c.get(f"/students/{useradd.id}")
-        """ student has quotas """
         self.assertEqual(response.context["enrolls"].count(),1)
-        """ quotas has student """
         self.assertEqual(response.context["non_enrolls"].count(),1)
 
     def test_non_enroll_student(self):
@@ -67,9 +65,7 @@ class QuotaTestCase(TestCase):
         useradd = Student.objects.create(first="q",last="qq",username="qqq")
         c = Client()
         response = c.get(f"/students/{useradd.id}")
-        """ quotas hasn't student """
         self.assertEqual(response.context["non_enrolls"].count(),2)
-        
         self.assertEqual(response.context["enrolls"].count(),0)
         
         
@@ -85,9 +81,7 @@ class QuotaTestCase(TestCase):
         q.quotas.remove(useradd)
         c = Client()
         response = c.get(f"/students/{useradd.id}")
-        
         self.assertEqual(response.context["enrolls"].count(),0)
-        
         self.assertEqual(response.context["non_enrolls"].count(),2)
     
     
