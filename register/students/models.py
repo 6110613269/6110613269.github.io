@@ -22,4 +22,10 @@ class Quota(models.Model):
 
     def __str__(self):
         return f"{self.code}: {self.name}"
+        
+    def is_valid_limit(self):
+        return self.limit >= self.quotas.all().count()
+
+    def is_valid_open(self):
+        return self.status == "open"
 

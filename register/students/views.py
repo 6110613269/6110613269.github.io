@@ -9,10 +9,10 @@ from .models import Student, Quota
 
 
 # Create your views here.
-def index(request):
-    return render(request, "students/index.html", {
-        "students": Student.objects.all()
-    })
+# def index(request):
+#     return render(request, "students/index.html", {
+#         "students": Student.objects.all()
+#     })
 
 def student(request, student_id):
     try:
